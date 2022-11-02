@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AppRouter from "./router";
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider, createTheme } from "@mui/material";
+import { Navbar } from "./components";
+import { 
+  Chart, 
+  ArcElement, 
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend, 
+} from "chart.js";
 
-function App() {
+Chart.register(
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const theme = createTheme({});
+
+const App: React.FC = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Navbar />
+          <AppRouter />
+        </ThemeProvider>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
