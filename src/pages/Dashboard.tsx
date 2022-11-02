@@ -1,5 +1,8 @@
 import React from "react";
-const data = {
+import { Container } from "@mui/material";
+import { BudgetData } from "../constants";
+import { BudgetTable } from "../components";
+const data: BudgetData = {
   "bills": [
     {
       "id": 1,
@@ -55,12 +58,11 @@ const data = {
 }
 
 const Dashboard = (): JSX.Element => {
-  console.log('data', data);
 
   return (
-    <div>
-      this is dashboard
-    </div>
+    <Container>
+      <BudgetTable data={data.bills} />
+    </Container>
   )
 }
 
