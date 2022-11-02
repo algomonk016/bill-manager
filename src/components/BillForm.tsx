@@ -3,9 +3,15 @@ import React, { useState } from "react";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { CurrencyRupeeTwoTone } from '@mui/icons-material'
 import Select from 'react-select'
-import { Option } from "../constants";
+import { Bill, Option } from "../constants";
 
-const BillForm = (): JSX.Element => {
+interface Props{
+  hasBillData?: boolean;
+  billData?: Bill
+}
+
+const BillForm = (props: Props): JSX.Element => {
+  console.log('props', props)
   const [date, setDate] = useState<any>();
   const [description, setDescription] = useState<string>('')
   const [amount, setAmount] = useState<string>('')

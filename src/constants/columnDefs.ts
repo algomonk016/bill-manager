@@ -2,7 +2,8 @@ import {
   ColDef,
   ColGroupDef,
 } from 'ag-grid-community';
-import { KeyValues } from '@/constants/interfaces';
+import { KeyValues } from '../constants/interfaces';
+import ButtonCellRendererForDocumentsTable from '../components/ButtonCellRendererForDocumentsTable';
 
 export const columnDef: (ColDef | ColGroupDef | KeyValues)[] = [
   // default show
@@ -35,5 +36,10 @@ export const columnDef: (ColDef | ColGroupDef | KeyValues)[] = [
     field: 'date',
     sortable: true,
     filter: 'agTextColumnFilter',
-  }
+  },
+  {
+    headerName: 'Actions',
+    field: 'id',
+    cellRenderer: ButtonCellRendererForDocumentsTable
+  },
 ]
