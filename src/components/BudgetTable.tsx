@@ -41,7 +41,7 @@ const BudgetTable = (props: Props): JSX.Element => {
         <Typography typography={'caption'} fontSize={'20px'} > Monthly Bill </Typography>
 
         <Modal
-          title="Add Bill"
+          title="Add Bill Details"
           text={ <AddCardTwoTone color="success" /> }
           content={<BillForm />}
           icon
