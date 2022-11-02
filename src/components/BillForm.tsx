@@ -6,16 +6,19 @@ import Select from 'react-select'
 import { Bill, Option } from "../constants";
 
 interface Props{
-  hasBillData?: boolean;
   billData?: Bill
 }
 
 const BillForm = (props: Props): JSX.Element => {
-  console.log('props', props)
-  const [date, setDate] = useState<any>();
-  const [description, setDescription] = useState<string>('')
-  const [amount, setAmount] = useState<string>('')
-  const [category, setCategory] = useState<Option>()
+  const [date, setDate] = useState<any>(props?.billData?.date ?? null);
+  const [description, setDescription] = useState<string>(props?.billData?.description ?? '')
+  const [amount, setAmount] = useState<string>(props?.billData?.amount ?? '')
+  const [category, setCategory] = useState<Option>(
+    props?.billData?.category ? {
+      label: props?.billData?.category ?? '',
+      value: props?.billData?.category ?? ''
+    } : null
+  )
 
   const options: Option[] = [
     { value: 'FoodNDining', label: 'FoodNDining' },
@@ -82,6 +85,7 @@ const BillForm = (props: Props): JSX.Element => {
 
         <Grid my={2} >
           <Select
+            placeholder={'-Select-'}
             options={options}
             isSearchable
             onChange={(selected) => setCategory(selected)}

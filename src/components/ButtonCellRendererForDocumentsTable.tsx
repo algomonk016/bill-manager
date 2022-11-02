@@ -1,4 +1,5 @@
 import { DeleteTwoTone, EditTwoTone } from '@mui/icons-material';
+import { Typography, Grid, Button } from '@mui/material';
 import React from "react";
 import {Modal, BillForm} from ".";
 import { Bill } from "../constants/interfaces";
@@ -12,7 +13,7 @@ const EditDocument = (props: EditBillProps): JSX.Element => {
   
   return (
     <div>
-      <BillForm billData={data} hasBillData />
+      <BillForm billData={data} />
     </div>
   )
 }
@@ -20,10 +21,26 @@ const EditDocument = (props: EditBillProps): JSX.Element => {
 const DeleteDocument = (props: {id: string}): JSX.Element => {
   const {id} = props;
 
+  const deleteBill = () => {
+
+  }
+
   return (
-    <div>
-      Delete form {id}
-    </div>
+    <Grid py={2}>
+      <Typography textAlign={'center'} variant='h6'>Would you like to delete the bill with id {id}?</Typography> 
+      <Grid container spacing={1} justifyContent={'center'} mt={2}>
+        <Grid item xs={3}>
+          <Button fullWidth variant="outlined" color="error" onClick={deleteBill} >
+            Delete Bill
+          </Button>
+        </Grid>
+        <Grid item xs={3}>
+          <Button fullWidth variant="contained" color="success">
+            Keep it!
+          </Button>
+        </Grid>
+      </Grid>
+    </Grid>
   )
 }
 
