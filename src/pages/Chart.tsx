@@ -1,6 +1,7 @@
 import { StackedBarChart } from '../components';
 import { BudgetData } from '../constants';
 import React from 'react';
+import { Typography } from '@mui/material';
 
 const data: BudgetData = {
   "bills": [
@@ -160,6 +161,7 @@ const data: BudgetData = {
 const TimeSeriesChart = (): JSX.Element => {
   return (
     <div>
+      <Typography textAlign={'center'} variant={'h5'} fontFamily={'sans-serif'} > Monthly Bill Chart </Typography>
       <StackedBarChart data={data.bills} />
     </div>
   )
