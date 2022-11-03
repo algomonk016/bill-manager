@@ -7,7 +7,7 @@ import { Bill, Option } from "../../constants";
 import { addBill, updateBill } from "../../service/bill.service";
 import { isMoment } from "moment";
 
-interface Props{
+interface Props {
   billData?: Bill
 }
 
@@ -37,15 +37,20 @@ const BillForm = (props: Props): JSX.Element => {
     const billDetail = {
       description,
       amount,
-      date: isMoment(date) ? date.format("DD-MM-YYYY") : date ,
+      date: isMoment(date) ? date.format("DD-MM-YYYY") : date,
       category: category.label,
     }
-    
-    if(id){
-      updateBill({id, ...billDetail})
-    } else{
+
+    if (id) {
+      updateBill({ id, ...billDetail })
+    } else {
       addBill(billDetail);
     }
+
+    setDate(null)
+    setDescription('')
+    setAmount('')
+    setCategory(null)
   }
 
   return (
@@ -62,9 +67,9 @@ const BillForm = (props: Props): JSX.Element => {
     >
       <Grid width={'100%'} height={10 / 12}>
         <Grid>
-          <TextField 
+          <TextField
             value={description}
-            onChange={(e) => setDescription(e.target.value) } 
+            onChange={(e) => setDescription(e.target.value)}
             fullWidth size="small" label="Description" variant="outlined" margin="dense" />
         </Grid>
 
@@ -74,7 +79,7 @@ const BillForm = (props: Props): JSX.Element => {
             InputProps={{
               endAdornment: <InputAdornment position="start"> <CurrencyRupeeTwoTone /> </InputAdornment>
             }}
-            onChange={(e) => setAmount(e.target.value) }
+            onChange={(e) => setAmount(e.target.value)}
             value={amount}
             label="Amount" variant="outlined" margin="dense"
           />
@@ -101,17 +106,10 @@ const BillForm = (props: Props): JSX.Element => {
         </Grid>
       </Grid>
 
-      <Grid container spacing={1}>
-        <Grid item xs={6}>
-          <Button fullWidth variant="contained" color="success" onClick={saveBill} >
-            Save Bill
-          </Button>
-        </Grid>
-        <Grid item xs={6}>
-          <Button fullWidth variant="outlined" color="error">
-            Cancel
-          </Button>
-        </Grid>
+      <Grid container justifyContent={'center'} >
+        <Button fullWidth variant="contained" color="success" onClick={saveBill} >
+          Save Bill
+        </Button>
       </Grid>
     </Box>
   )
