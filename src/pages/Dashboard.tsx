@@ -49,7 +49,7 @@ const Dashboard = (): JSX.Element => {
 
     for(const bill of data){
       const { id, amount } = bill;
-      if(amount < currentBudget){
+      if(amount <= currentBudget){
         currentBudget -= amount;
         ids.push(id);
       }

@@ -29,7 +29,7 @@ export const columnDef: (ColDef | ColGroupDef | KeyValues)[] = [
     headerName: 'Amount',
     field: 'amount',
     sortable: true,
-    filter: 'agNumberColumnFilter',
+    filter: 'agTextColumnFilter',
   },
   {
     headerName: 'Date',
