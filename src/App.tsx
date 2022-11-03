@@ -3,25 +3,25 @@ import AppRouter from "./router";
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from "@mui/material";
 import { Navbar } from "./components";
-import { 
-  Chart, 
-  ArcElement, 
+import {
+  Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
-  Legend, 
-} from "chart.js";
+  Legend,
+} from 'chart.js';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import type {} from '@mui/x-date-pickers/themeAugmentation';
 
-Chart.register(
-  ArcElement,
+ChartJS.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend

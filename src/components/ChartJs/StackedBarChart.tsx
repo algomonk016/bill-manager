@@ -1,12 +1,49 @@
+import React from 'react';
 import { Grid } from "@mui/material";
-import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Line } from 'react-chartjs-2'
 import { ChartProps, ChartData } from "./types";
 import { ConvertBillDataToChartData } from "./utils";
 
-const LineChart = (props: ChartProps): JSX.Element => {
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      text: 'Monthly Bill',
+    },
+  },
+  responsive: true,
+  scales: {
+    x: {
+      stacked: false,
+    },
+    y: {
+      stacked: true,
+    },
+  },
+};
+
+const StackedBarChart = (props: ChartProps) => {
 
   let { data, width } = props
 
@@ -34,7 +71,7 @@ const LineChart = (props: ChartProps): JSX.Element => {
       {
         !!chartData && (
           <Grid width={width ? width : 700} >
-            <Line
+            <Bar
               data={chartData}
               options={options}
             />
@@ -45,4 +82,4 @@ const LineChart = (props: ChartProps): JSX.Element => {
   )
 }
 
-export default LineChart;
+export default StackedBarChart;
