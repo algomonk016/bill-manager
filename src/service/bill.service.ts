@@ -9,7 +9,10 @@ import { store } from "../redux/store";
 
 export const getBills = async (): Promise<any> => {
   const promise =  new Promise((resolve) => {
-    const data = JSON.parse(localStorage.getItem('bills'))
+    let data = JSON.parse(localStorage.getItem('bills'))
+    if(!data){
+      data = {bills: []}
+    }
     resolve({
       data
     })
@@ -36,6 +39,9 @@ export const deleteBill = async (id: number): Promise<any> => {
 export const addBill = async (newBillData: any): Promise<any> => {
   const promise = new Promise((resolve) => {
     let data = JSON.parse(localStorage.getItem('bills'))
+    if(!data){
+      data = {bills: []}
+    }
     data.bills = [{
       id: Math.floor(Math.random() * 10000) + 1,
       ...newBillData
@@ -55,7 +61,9 @@ export const addBill = async (newBillData: any): Promise<any> => {
 export const updateBill = async (newBillData: any): Promise<any> => {
   const promise = new Promise((resolve) => {
     let data = JSON.parse(localStorage.getItem('bills'))
-
+    if(!data){
+      data = {bills: []}
+    }
     data.bills = data.bills.filter((bill: Bill) => bill.id !== newBillData.id)
 
     data.bills = [{

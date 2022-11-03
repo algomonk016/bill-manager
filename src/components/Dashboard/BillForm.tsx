@@ -37,7 +37,7 @@ const BillForm = (props: Props): JSX.Element => {
     const billDetail = {
       description,
       amount,
-      date: isMoment(date) ? date.format("DD-MM-YYYY") : date,
+      date: isMoment(date) ? date.format("MM-DD-YYYY") : date,
       category: category.label,
     }
 
