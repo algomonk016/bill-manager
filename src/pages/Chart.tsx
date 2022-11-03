@@ -1,5 +1,6 @@
 import React from 'react';
-const Chart = (): JSX.Element => {
+
+const TimeSeriesChart = (): JSX.Element => {
   return (
     <div>
       this is chart
@@ -7,4 +8,4 @@ const Chart = (): JSX.Element => {
   )
 }
 
-export default Chart;
+export default TimeSeriesChart;

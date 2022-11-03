@@ -3,9 +3,9 @@ import { Typography, Grid } from "@mui/material";
 import { ColDef, GridOptions } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import React, { useMemo, useRef } from "react";
-import { columnDef, Bill } from '../constants'
+import { columnDef, Bill } from '../../constants'
 import BillForm from "./BillForm";
-import Modal from "./Modal";
+import Modal from "../Modal";
 
 interface Props {
   data: Bill[]

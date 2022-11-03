@@ -1,8 +1,8 @@
 import { DeleteTwoTone, EditTwoTone } from '@mui/icons-material';
 import { Typography, Grid, Button } from '@mui/material';
 import React from "react";
-import {Modal, BillForm} from ".";
-import { Bill } from "../constants/interfaces";
+import {Modal, BillForm} from "..";
+import { Bill } from "../../constants/interfaces";
 
 interface EditBillProps {
   data: Bill;

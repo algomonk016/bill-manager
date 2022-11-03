@@ -3,7 +3,7 @@ import {
   ColGroupDef,
 } from 'ag-grid-community';
 import { KeyValues } from '../constants/interfaces';
-import ButtonCellRendererForDocumentsTable from '../components/ButtonCellRendererForDocumentsTable';
+import ButtonCellRendererForDocumentsTable from '../components/ag-grid/ButtonCellRendererForDocumentsTable';
 
 export const columnDef: (ColDef | ColGroupDef | KeyValues)[] = [
   // default show

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { CurrencyRupeeTwoTone } from '@mui/icons-material'
 import Select from 'react-select'
-import { Bill, Option } from "../constants";
+import { Bill, Option } from "../../constants";
 
 interface Props{
   billData?: Bill
