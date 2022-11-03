@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/bill-manager/static/css/main.b98a85a1.css",
-    "main.js": "/bill-manager/static/js/main.bd12b5e2.js",
+    "main.js": "/bill-manager/static/js/main.cdec6bc9.js",
     "static/js/787.20a0ea8a.chunk.js": "/bill-manager/static/js/787.20a0ea8a.chunk.js",
     "index.html": "/bill-manager/index.html",
     "main.b98a85a1.css.map": "/bill-manager/static/css/main.b98a85a1.css.map",
-    "main.bd12b5e2.js.map": "/bill-manager/static/js/main.bd12b5e2.js.map",
+    "main.cdec6bc9.js.map": "/bill-manager/static/js/main.cdec6bc9.js.map",
     "787.20a0ea8a.chunk.js.map": "/bill-manager/static/js/787.20a0ea8a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b98a85a1.css",
-    "static/js/main.bd12b5e2.js"
+    "static/js/main.cdec6bc9.js"
   ]
 }
