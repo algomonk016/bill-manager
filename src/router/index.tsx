@@ -6,7 +6,7 @@ import { TimeSeriesChart, Dashboard } from "../pages";
 const AppRouter: React.FC = (): JSX.Element => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/bill-manager" element={<Layout />}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/chart" element={<TimeSeriesChart />} />
       </Route>
