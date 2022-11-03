@@ -37,7 +37,7 @@ const BudgetTable = (props: Props): JSX.Element => {
       <div className="ag-theme-alpine" style={gridStyle}>
         <AgGridReact
           ref={gridRef}
-          rowData={data}
+          rowData={data ?? []}
           gridOptions={gridOptions}
           defaultColDef={defaultColDef}
           paginationPageSize={10}
