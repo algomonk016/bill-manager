@@ -20,7 +20,6 @@ const BudgetTable = (props: Props): JSX.Element => {
 
   const gridOptions: GridOptions = {
     columnDefs: columnDef,
-    rowData: data,
     rowSelection: 'single',
     animateRows: true,
   };
@@ -51,6 +50,7 @@ const BudgetTable = (props: Props): JSX.Element => {
       <div className="ag-theme-alpine" style={gridStyle}>
         <AgGridReact
           ref={gridRef}
+          rowData={data}
           gridOptions={gridOptions}
           defaultColDef={defaultColDef}
           paginationPageSize={10}
