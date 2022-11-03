@@ -1,7 +1,7 @@
 {
   "name": "bright-money-assignment",
   "version": "0.1.0",
-  "homepage": "https://algomonk016.github.io/bill-manager",
+  "homepage": "https://algomonk016.github.io/bill-manager/",
   "private": true,
   "dependencies": {
     "@date-io/moment": "1.x",

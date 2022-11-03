@@ -21,8 +21,8 @@ interface Props {
 
 const drawerWidth = 240;
 const navItems = [
-  { title: 'Home', path: '/'} , 
-  { title: 'Time-Series Chart', path: '/chart' }
+  { title: 'Home', path: '/bill-manager'} , 
+  { title: 'Time-Series Chart', path: '/bill-manager/chart' }
 ];
 
 export default function DrawerAppBar(props: Props) {

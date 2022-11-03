@@ -7,8 +7,8 @@ const AppRouter: React.FC = (): JSX.Element => {
   return (
     <Routes>
       <Route path="/bill-manager" element={<Layout />}>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/chart" element={<TimeSeriesChart />} />
+        <Route path="/bill-manager/" element={<Dashboard />} />
+        <Route path="/bill-manager/chart" element={<TimeSeriesChart />} />
       </Route>
     </Routes>
   )
