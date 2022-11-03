@@ -49,7 +49,7 @@ export const getStorageData = (key: string, storage: storageType = 'local'): any
     }
 
     try{
-      return JSON.parse(data).data;
+      return JSON.parse(data);
     } catch(e){
       return data;
     }

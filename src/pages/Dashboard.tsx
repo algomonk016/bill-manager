@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { Container } from "@mui/material";
 import { BudgetTable } from "../components";
 import { store } from "../redux/store";
-import { fetchBillsDetails, selectBill } from "../redux/store/slices/billSlice";
-import { useAppSelector } from "../redux/hooks";
+import { fetchBillsDetails } from "../redux/store/slices/billSlice";
+import { useSelector } from "react-redux";
 
 const Dashboard = (): JSX.Element => {
 
-  const data = useAppSelector(selectBill)
+  const data = useSelector((state: any) => state?.bills?.data)
 
   useEffect(() => {
     store.dispatch(fetchBillsDetails())
@@ -15,7 +15,7 @@ const Dashboard = (): JSX.Element => {
 
   return (
     <Container>
-      <BudgetTable data={data.bills} />
+      <BudgetTable data={data?.bills} />
     </Container>
   )
 }

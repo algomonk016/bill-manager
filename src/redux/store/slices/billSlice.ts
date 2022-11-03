@@ -5,19 +5,17 @@ import { getBills } from '../../../service/bill.service';
 
 export interface BillState {
   data: any;
-  status: 'idle' | 'failed' | 'loading';
 }
 
 const initialState: BillState = {
   data: {},
-  status: 'idle',
 }
 
 export const fetchBillsDetails = createAsyncThunk(
   'bills/fetchDetails',
   async () => {
     const bills = await getBills();
-    return bills.data.data;
+    return bills;
   }
 )
 
@@ -27,21 +25,12 @@ export const billSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
-      .addCase(fetchBillsDetails.pending, (state) => {
-        state.status = 'loading';
-      })
       .addCase(fetchBillsDetails.fulfilled, (state, action) => {
-        state.status = 'idle';
-        state.data = action.payload;
-      })
-      .addCase(fetchBillsDetails.rejected, (state) => {
-        state.status = 'failed';
+        state.data = action.payload.data;
       })
   },
 })
 
-// export const {  } = billSlice.actions;
-
-export const selectBill = (state: RootState) => state.bill.data;
+export const selectBill = (state: RootState) => state.bills;
 
 export default billSlice.reducer;

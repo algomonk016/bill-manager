@@ -4,12 +4,15 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { CurrencyRupeeTwoTone } from '@mui/icons-material'
 import Select from 'react-select'
 import { Bill, Option } from "../../constants";
+import { addBill, updateBill } from "../../service/bill.service";
+import { isMoment } from "moment";
 
 interface Props{
   billData?: Bill
 }
 
 const BillForm = (props: Props): JSX.Element => {
+  const [id] = useState<number>(props?.billData?.id ?? null)
   const [date, setDate] = useState<any>(props?.billData?.date ?? null);
   const [description, setDescription] = useState<string>(props?.billData?.description ?? '')
   const [amount, setAmount] = useState<string>(props?.billData?.amount ?? '')
@@ -34,11 +37,15 @@ const BillForm = (props: Props): JSX.Element => {
     const billDetail = {
       description,
       amount,
-      date: date.format("DD-MM-YYYY") ,
+      date: isMoment(date) ? date.format("DD-MM-YYYY") : date ,
       category: category.label,
     }
-
-    console.table(billDetail)
+    
+    if(id){
+      updateBill({id, ...billDetail})
+    } else{
+      addBill(billDetail);
+    }
   }
 
   return (

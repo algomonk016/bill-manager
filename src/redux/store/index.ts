@@ -10,7 +10,7 @@ import {
  */
 export const store = configureStore({
   reducer: {
-    bill: billSlice,
+    bills: billSlice,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
